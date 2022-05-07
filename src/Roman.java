@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 enum Roman {
     I(1),
     II(2),
@@ -61,19 +59,19 @@ enum Roman {
 
     public static Roman ValSearch(int val) {
         Roman res=null;try {
-       for (Roman num : values()){
-            if (num.getValue()==val){
-                res=num;
-                break;
+            for (Roman num : values()){
+                if (num.getValue()==val){
+                    res=num;
+                    break;
+                }
             }
-       }
             if (res==null) throw new RomanException("В римской системе нет таких чисел");
-           } catch (RomanException e) {
+        } catch (RomanException e) {
             System.out.println("В римской системе нет таких чисел");
 
         }
         return(res);
-       }
+    }
 
     public static Roman NameSearch(String name) throws RomanException {
         Roman res;
